@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="app.css" />
+<body>
+<p id="p1">Tic-Tac-Toe<p>
+
+</head>
+
+
+<div>
+
+  <table id="tic-tac-toe">
+<tr>
+    <td id="td0">0</td>
+    <td id="td1">1</td>
+    <td id="td2">2</td>
+</tr>
+  <tr>
+    <td id="td3">3</td>
+    <td id="td4">4</td>
+    <td id="td5">5</td>
+</tr>
+  <tr>
+    <td id="td6">6</td>
+    <td id="td7">7</td>
+    <td id="td8">8</td>
+  </tr>
+
+</table>
+</div>
+
+
+<script>
+z = 1;
+$(function()
+{
+document.getElementById("p1").style.color = "blue";
+document.getElementById("p1").style.textAlign = "center";
+$("td").one("click",(function(e)
+{
+number = e.target.innerText;
+//console.log(number);
+turnt(number);
+}))
+$("tr").click(function()
+{
+
+})
+function win() {
+
+if ( $("#td0").text()== "X" && $("#td1").text()== "X" &&  $("#td2").text()== "X")
+{
+alert("X win")
+location.reload(true);
+}
+if ( $("#td3").text()== "X" && $("#td4").text()== "X" &&  $("#td5").text()== "X")
+{
+alert("X win")
+location.reload(true);
+}
+if ( $("#td6").text()== "X" && $("#td7").text()== "X" &&  $("#td8").text()== "X")
+{
+alert("X win")
+location.reload(true); //horizontal X's
+}
+if ( $("#td0").text()== "X" && $("#td3").text()== "X" &&  $("#td6").text()== "X")
+{
+alert("X win")
+location.reload(true);
+}
+if ( $("#td1").text()== "X" && $("#td4").text()== "X" &&  $("#td7").text()== "X")
+{
+alert("X win")
+location.reload(true);
+}
+if ( $("#td2").text()== "X" && $("#td5").text()== "X" &&  $("#td8").text()== "X")
+{
+alert("X win")
+location.reload(true); //vertical X's
+}
+if ( $("#td0").text()== "X" && $("#td4").text()== "X" &&  $("#td8").text()== "X")
+{
+alert("X win")
+location.reload(true);
+}
+if ( $("#td2").text()== "X" && $("#td4").text()== "X" &&  $("#td6").text()== "X")
+{
+alert("X win")
+location.reload(true); //diagnoal X's
+}
+
+if ( $("#td0").text()== "O" && $("#td1").text()== "O" &&  $("#td2").text()== "O")
+{
+alert("O win")
+location.reload(true);
+}
+if ( $("#td3").text()== "O" && $("#td4").text()== "O" &&  $("#td5").text()== "O")
+{
+alert("O win")
+location.reload(true);
+}
+if ( $("#td6").text()== "O" && $("#td7").text()== "O" &&  $("#td8").text()== "O")
+{
+alert("O win")
+location.reload(true); //horizontal O's
+}
+if ( $("#td0").text()== "O" && $("#td3").text()== "O" &&  $("#td6").text()== "O")
+{
+alert("O win")
+location.reload(true);
+}
+if ( $("#td2").text()== "O" && $("#td5").text()== "O" &&  $("#td8").text()== "O")
+{
+alert("O win")
+location.reload(true);
+}
+if ( $("#td1").text()== "O" && $("#td4").text()== "O" &&  $("#td7").text()== "O")
+{
+alert("O win")
+location.reload(true); //vertical O's
+}
+if ( $("#td0").text()== "O" && $("#td4").text()== "O" &&  $("#td8").text()== "O")
+{
+alert("O win")
+location.reload(true);
+}
+if ( $("#td2").text()== "O" && $("#td4").text()== "O" &&  $("#td6").text()== "O")
+{
+alert("O win")
+location.reload(true); //diagonal O's
+}}
+function turnt(cellblock) {
+maybe = "td:contains("+ cellblock +")"
+
+if (z % 2 == 1)
+{
+$(maybe).text('X');
+}
+else  {
+$(maybe).text('O');
+}
+z++;
+win();
+cellId = "#td" + cellblock
+
+$(cellId).css("color","black");
+$(cellId).css("font-size","75px");
+}
+})
+
+
+</script>
+
+</body>
+</html>
